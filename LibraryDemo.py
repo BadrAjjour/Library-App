@@ -23,7 +23,7 @@ while True:
     print("5- Return Book")
     print("6- Print Report")
     print("7- Exit")
-    
+
     v_user_input = input("your input : ")
     
     if v_user_input == "1":
@@ -50,10 +50,10 @@ while True:
         print("Student Added Successfully")
 
     elif v_user_input == "4":
-        idx = 0
-        for item in v_library.students:
-            print(str(idx + 1) + "- " + item.full_name, end = '\t')
-            idx = idx + 1
+ 
+        for idx, item in enumerate(v_library.students, start=1):
+            print(str(idx) + "- " + item.full_name, end = '\t')
+
         v_std_idx = int(input("\nEnter Student Index : "))
         
         if v_std_idx > 0 and  v_std_idx <= len(v_library.students):
